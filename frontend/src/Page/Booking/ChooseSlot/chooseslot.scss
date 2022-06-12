@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+
+.ChooseSlotCopy {
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.Movies {
+  margin-bottom: 24px;
+}
+
+.Movies select {
+  appearance: none;
+  background: white;
+  font-size: 14px;
+  margin-left: 19px;
+  border-radius: 4px;
+  padding: 6px 24px;
+}
+
+.ShowCase {
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #3b3b3b;
+  padding: 12px;
+  border-radius: 4px;
+  color: #7e7e7e;
+}
+
+
+.Cinema {
+  margin-bottom: 18px;
+  perspective: 450px;
+
+  display: grid;
+  place-items: center;
+  grid-gap: 20px;
+}
+
+
+.Cinema .seats {
+  display: grid;
+  grid-gap: 16px;
+ 
+  grid-template-columns: repeat(8, min-content);
+  align-items: center;
+  
+}
+
+
+
+.Cinema .seats .seat:not(.occupied):hover,
+.Cinema .seats .seat:not(.occupied):focus {
+  cursor: pointer;
+  background: #c1eac5;
+  transform: scale(1.2);
+  
+  
+}
+
+.Cinema .seats .seat.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8;
+ 
+  border-radius: 100%;
+  background: transparent;
+  border: 2px solid #7bc47f;
+  animation: show-off 0.8s;
+  visibility: hidden;
+ 
+}
+
+@keyframes show-off {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+    
+  }
+}
+
+.seat {
+  display: inline-block;
+  background: #626262;
+  width: 26px;
+  height: 22px;
+  padding: 20px;
+ 
+  transition: transform 0.3s ease-in-out;
+
+  position: relative;
+  top: 1px;
+}
+
+.seat.selected {
+  background: #7bc47f !important;
+  width: 26px;
+  height: 22px;
+  
+}
+
+.seat.occupied {
+  background: #cfcfcf;
+  width: 26px;
+  height: 22px;
+}
+
+.info .count {
+  color: #7bc47f;
+  font-size: 15px;
+}
+
+.info .total {
+  color: #7bc47f;
+  font-size: 15px;
+}
+
+
+.checkOut__left {
+  margin-top: 20px;
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: -5px 5px 11px -2px #cacbcc;
+    
+    .memu__list {
+      list-style: none;
+      padding: spacing(3) spacing(6.5) spacing(1);
+      
+      .list__item {
+        display: inline;
+        margin-right: spacing(5);
+        padding-top: spacing(3);
+        
+        &.active {
+          color: #fb4226;
+          border-top: 1px solid #fb4226;
+        }
+        .step {
+          text-transform: uppercase;
+          
+          
+        }
+      }
+    }
+    .user__login {
+      padding: spacing(3) spacing(3) spacing(1);
+      
+      .user__link {
+        text-decoration: none;
+        img {
+          width: 30px;
+          border-radius: 50%;
+          margin: spacing(0.3);
+        }
+        .user__name {
+          
+          color: #949494;
+          
+        }
+      }
+    }
+  }
+  
+    .bookSlot__content {
+      padding: spacing(3) spacing(10) spacing(0) spacing(12);
+      margin-left: 10px;
+      .theater__info {
+        
+        .theater__img {
+          img {
+            width: 55px;
+            height: 55px;
+          }
+          .theater__name {
+            margin-top: -200px;
+            margin-left: 10px;
+            .name {
+              color: #949494;
+              .subname {
+                color: #29303b;
+                font-size: 30px;
+              }
+            }
+            .showtime {
+              margin-left: 1px;
+              margin-top: -50px;
+              color: #949494;
+              
+            }
+          }
+        }
+        .timeKeepSlot {
+          text-align: center;
+          margin-right: 50px;
+          .title__text {
+            color: #949494;
+            
+            margin: 0;
+          }
+          .time {
+            color: #fb4226;
+            font-size: 30px;
+            letter-spacing: spacing(0.1);
+          }
+        }
+      }
+      .chooseSlot {
+        .screen__img {
+          img {
+            margin-left: 200px;
+            width: 55%;
+          }
+        }
+        .picking {
+          text-align: center;
+          padding: 0 spacing(5);
+          margin-bottom: spacing(3);
+          
+          .row__name {
+            .row__list {
+              list-style: none;
+              .list__item {
+                margin-bottom: spacing(0.36);
+              }
+            }
+          }
+          .slot__picking {
+            padding-left: 50px; ;
+           
+           
+          }
+        }
+        .slot__detail {
+          padding-bottom: spacing(2);
+          text-align: center;
+          justify-content: center;
+          .fa {
+            font-size: 20px;
+           
+          }
+          .slot__text {
+            padding-left: 10px;
+            margin-right: spacing(1.5);
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
